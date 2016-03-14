@@ -1,0 +1,34 @@
+<html>
+<head>
+	<title>Cadastro</title>
+</head>
+<body>
+	Cadastrar Uma Nova Pessoa na Aplicaçao
+
+	
+	<form method="post">
+	{% csrf_token %}
+		<label for="primeiro_nome">Primeiro nome:</label>
+	    {{ form.primeiro_nome }}
+	    <br/>
+
+	    <label for="ultimo_nome">Ultimo nome:</label>
+	    {{ form.ultimo_nome }}
+	    <br/>
+
+	   	<label for="email">Email:</label>
+	    {{ form.email }}
+	    <br/>
+
+	    <label for="idade">Idade:</label>
+	    {{ form.idade }}
+	    <br/>
+
+	   	<label for="genero">Genero:</label>
+	    {{ form.genero }}
+
+	    <input type="submit"/>
+	  </form>
+
+</body>
+</html>

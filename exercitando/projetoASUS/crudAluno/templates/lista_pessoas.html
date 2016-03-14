@@ -3,7 +3,7 @@
 	<title>Lista Pessoas</title>
 </head>
 <body>
-Lista todas as pessoas
+Pessoas Cadastradas na Aplicaçao
 
 {% if pessoas %} <!-- é codigo -->
 <ul>
@@ -14,5 +14,8 @@ Lista todas as pessoas
 	{% endfor %}
 </ul>
 {% endif%}
+
+<a href="{% url:namespace_cadastrar_pessoa %}">q</a>
+
 </body>
 </html>

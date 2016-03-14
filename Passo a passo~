@@ -97,6 +97,3 @@ Algumas informacoes sobre a estrutura de um projeto em Django:
 		5) Criar a pagina HTML que exibe todas as pessoas cadastradas (lista_pessoas.html)
 		6) Adicionar a referencia de crudAluno/urls.py em projetoASUS/urls.py
 		7) Criar o arquivo projetoASUS/urls.py e adicionar a rota 'lista_pessoas/'
-		8) Criar um metodo em views.py para cadastrar uma nova pessoa
-		9) Criar o arquivo cadastrar_pessoa.html para que os dados da nova pessoa sejam coletados
-		10) Adicionar a nova rota a crudAluno/urls.py
