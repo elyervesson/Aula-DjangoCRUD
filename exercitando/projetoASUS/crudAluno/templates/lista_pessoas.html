@@ -1,0 +1,18 @@
+<html>
+<head>
+	<title>Lista Pessoas</title>
+</head>
+<body>
+Lista todas as pessoas
+
+{% if pessoas %} <!-- é codigo -->
+<ul>
+	{% for pessoa in pessoas %}
+		<li>
+			{{ pessoa }}
+		</li>
+	{% endfor %}
+</ul>
+{% endif%}
+</body>
+</html>
