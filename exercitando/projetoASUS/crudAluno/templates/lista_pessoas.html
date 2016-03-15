@@ -5,15 +5,18 @@
 <body>
 Pessoas Cadastradas na Aplicaçao
 
-{% if pessoas %} <!-- é codigo -->
+{% if pessoas %}
 <ul>
 	{% for pessoa in pessoas %}
 		<li>
-			{{ pessoa }}
+			<a href="{% url 'namespace_destalhes_pessoa' %}">{{ pessoa }}</a>
+			
 		</li>
 	{% endfor %}
 </ul>
 {% endif%}
+
+<a href="{% url 'namespace_cadastrar_pessoa' %}">Adicionar Pessoa</a>
 
 </body>
 </html>

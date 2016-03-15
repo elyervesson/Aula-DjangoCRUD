@@ -9,7 +9,8 @@
 		{% csrf_token %}
 		{{ form.as_p }}
 		<button type="submit">Adicionar Pessoa</button>
-	  </form>
+	</form>
 
+	<a href="{% url 'namespace_lista_pessoas' %}">Listar Pessoas</a>
 </body>
 </html>
