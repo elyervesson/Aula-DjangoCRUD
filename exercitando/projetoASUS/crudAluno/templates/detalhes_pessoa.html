@@ -1,0 +1,16 @@
+<html>
+<head>
+	<title>Detalhes</title>
+</head>
+<body>
+{% if pessoa %}
+	Nome: {{pessoa.nome}}</br>
+	Email: {{pessoa.email}}</br>
+	Idade: {{pessoa.idade}}</br>
+	Genero: {{pessoa.genero}}</br>
+
+	<a href="{% url 'namespace_atualizar_pessoa' pessoa.id %}">Alterar Dados</a>
+
+{% endif %}
+</body>
+</html>
