@@ -4,12 +4,17 @@
 </head>
 <body>
 {% if pessoa %}
-	Nome: {{pessoa.nome}}</br>
+	Primeiro Nome: {{pessoa.primeiro_nome}}</br>
+	Ultimo Nome: {{pessoa.ultimo_nome}}</br>
 	Email: {{pessoa.email}}</br>
 	Idade: {{pessoa.idade}}</br>
 	Genero: {{pessoa.genero}}</br>
 
 	<a href="{% url 'namespace_atualizar_pessoa' pessoa.id %}">Alterar Dados</a>
+
+	<a href="{% url 'namespace_excluir' pessoa.id %}">Excluir Pessoa</a>
+
+	<a href="{% url 'namespace_lista_pessoas' %}">Listar Pessoas</a>
 
 {% endif %}
 </body>
