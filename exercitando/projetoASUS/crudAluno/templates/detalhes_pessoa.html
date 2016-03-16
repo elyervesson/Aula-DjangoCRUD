@@ -4,11 +4,20 @@
 </head>
 <body>
 {% if pessoa %}
+	
+	Informações pessoais</br>
 	Primeiro Nome: {{pessoa.primeiro_nome}}</br>
 	Ultimo Nome: {{pessoa.ultimo_nome}}</br>
 	Email: {{pessoa.email}}</br>
 	Idade: {{pessoa.idade}}</br>
 	Genero: {{pessoa.genero}}</br>
+
+	</br>
+	Informações especificas</br>
+	Genero: {{pessoa.periodo}}</br>
+	CRA: {{pessoa.cra}}</br>
+	Curso: {{pessoa.curso}}</br>
+	</br>
 
 	<a href="{% url 'namespace_atualizar_pessoa' pessoa.id %}">Alterar Dados</a>
 

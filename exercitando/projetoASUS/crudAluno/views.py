@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect
 
 # Create your views here.
-from .models import Pessoa, Aluno
-from .forms import PessoaForm, AlunoForm
+from .models import Pessoa
+from .forms import PessoaForm
 
 def lista_pessoas(request):
 	pessoas = Pessoa.objects.all()
@@ -17,6 +17,7 @@ def cadastrar_pessoa(request):
 		pessoa = Pessoa()
 		pessoa = form.save(commit=False)
 		pessoa.save()
+		return redirect('namespace_lista_pessoas')
 	context = {
 		'form' : form
 	}
