@@ -1,48 +1,48 @@
 from django.shortcuts import render, redirect
 
 # Create your views here.
-from .models import Pessoa
-from .forms import PessoaForm
+from .models import Estudante
+from .forms import EstudanteForm
 
-def lista_pessoas(request):
-	pessoas = Pessoa.objects.all()
+def lista_alunos(request):
+	alunos = Estudante.objects.all()
 	context = {
-		"pessoas":pessoas
+		"alunos": alunos
 	}
-	return render(request, 'lista_pessoas.html', context)
+	return render(request, 'lista_alunos.html', context)
 
-def cadastrar_pessoa(request):
-	form = PessoaForm(request.POST or None)
+def cadastrar_aluno(request):
+	form = EstudanteForm(request.POST or None)
 	if form.is_valid():
-		pessoa = Pessoa()
-		pessoa = form.save(commit=False)
-		pessoa.save()
-		return redirect('namespace_lista_pessoas')
+		aluno = Estudante()
+		aluno = form.save(commit=False)
+		aluno.save()
+		return redirect('namespace_lista_alunos')
 	context = {
 		'form' : form
 	}
-	return render(request, 'cadastrar_pessoa.html', context)
+	return render(request, 'cadastrar_aluno.html', context)
 
-def detalhes_pessoa(request, id):
-	pessoa = Pessoa.objects.get(pk=id)
+def detalhes_aluno(request, id):
+	aluno = Estudante.objects.get(pk=id)
 	context = {
-		'pessoa':pessoa
+		'aluno':aluno
 	}
-	return render(request, 'detalhes_pessoa.html', context)
+	return render(request, 'detalhes_aluno.html', context)
 
-def atualizar_pessoa(request, id):
-	pessoa = Pessoa.objects.get(pk=id)
-	form = PessoaForm(request.POST or None, instance=pessoa)
+def atualizar_aluno(request, id):
+	aluno = Estudante.objects.get(pk=id)
+	form = EstudanteForm(request.POST or None, instance=aluno)
 	if form.is_valid():
-		pessoa = form.save(commit=False)
-		pessoa.save()
-		return redirect('namespace_lista_pessoas')
+		aluno = form.save(commit=False)
+		aluno.save()
+		return redirect('namespace_lista_alunos')
 	context = {
 		'form':form
 	}
-	return render(request, 'cadastrar_pessoa.html', context)
+	return render(request, 'cadastrar_aluno.html', context)
 	
-def excluir(request, id):
-	pessoa = Pessoa.objects.get(pk=id)
-	pessoa.delete()
-	return redirect('namespace_lista_pessoas')
+def excluir_aluno(request, id):
+	aluno = Estudante.objects.get(pk=id)
+	aluno.delete()
+	return redirect('namespace_lista_alunos')

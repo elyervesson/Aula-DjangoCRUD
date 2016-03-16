@@ -1,0 +1,31 @@
+<html>
+<head>
+	<title>Detalhes</title>
+</head>
+<body>
+{% if aluno %}
+	
+	Informações pessoais</br>
+	Primeiro Nome: {{aluno.primeiro_nome}}</br>
+	Ultimo Nome: {{aluno.ultimo_nome}}</br>
+	Email: {{aluno.email}}</br>
+	Idade: {{aluno.idade}}</br>
+	Genero: {{aluno.genero}}</br>
+
+	</br>
+	Informações especificas</br>
+	Periodo: {{aluno.periodo}}</br>
+	CRA: {{aluno.cra}}</br>
+	Curso: {{aluno.curso}}</br>
+	Matricula: {{aluno.matricula}}</br>
+	</br>
+
+	<a href="{% url 'namespace_atualizar_aluno' aluno.id %}">Alterar Dados</a>
+
+	<a href="{% url 'namespace_excluir_aluno' aluno.id %}">Excluir Aluno</a>
+
+	<a href="{% url 'namespace_lista_alunos' %}">Listar Aluno</a>
+
+{% endif %}
+</body>
+</html>

@@ -1,0 +1,21 @@
+<html>
+<head>
+	<title>Lista Alunos</title>
+</head>
+<body>
+Alunos Cadastradas na Aplicaçao
+
+{% if alunos %}
+<ul>
+	{% for aluno in alunos %}
+		<li>
+			<a href="{% url 'namespace_detalhes_aluno' aluno.id %}">{{ aluno }}</a>
+		</li>
+	{% endfor %}
+</ul>
+{% endif %}
+
+<a href="{% url 'namespace_cadastrar_aluno' %}">Adicionar Aluno</a>
+
+</body>
+</html>
