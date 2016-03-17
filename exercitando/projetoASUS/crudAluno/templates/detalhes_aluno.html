@@ -1,11 +1,18 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
 	<title>Detalhes</title>
+
+	{% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
+
+	<link rel="stylesheet" href="{% static 'main.css' %}" />
 </head>
-<body>
+<body class="jumbotron">
 {% if aluno %}
 	
-	Informações pessoais</br>
+	<h3>Informações pessoais</h3>
 	Primeiro Nome: {{aluno.primeiro_nome}}</br>
 	Ultimo Nome: {{aluno.ultimo_nome}}</br>
 	Email: {{aluno.email}}</br>
@@ -13,18 +20,18 @@
 	Genero: {{aluno.genero}}</br>
 
 	</br>
-	Informações especificas</br>
+	<h3>Informações especificas</h3>
 	Periodo: {{aluno.periodo}}</br>
 	CRA: {{aluno.cra}}</br>
 	Curso: {{aluno.curso}}</br>
 	Matricula: {{aluno.matricula}}</br>
 	</br>
 
-	<a href="{% url 'namespace_atualizar_aluno' aluno.id %}">Alterar Dados</a>
+	<a href="{% url 'namespace_atualizar_aluno' aluno.id %}"><button class="btn btn-primary btn-block space">Alterar Dados</button></a>
 
-	<a href="{% url 'namespace_excluir_aluno' aluno.id %}">Excluir Aluno</a>
+	<a href="{% url 'namespace_excluir_aluno' aluno.id %}"><button class="btn btn-danger btn-block space">Excluir Aluno</button></a>
 
-	<a href="{% url 'namespace_lista_alunos' %}">Listar Aluno</a>
+	<a href="{% url 'namespace_lista_alunos' %}"><button class="btn btn-success btn-block space">Listar Aluno</button></a>
 
 {% endif %}
 </body>

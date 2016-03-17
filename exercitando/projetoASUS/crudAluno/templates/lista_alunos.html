@@ -1,12 +1,19 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
 	<title>Lista Alunos</title>
+
+	{% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
+
+	<link rel="stylesheet" href="{% static 'main.css' %}" />
 </head>
-<body>
-Alunos Cadastradas na Aplicaçao
+<body class="jumbotron">
+<h3>Alunos Cadastradas na Aplicaçao</h3>
 
 {% if alunos %}
-<ul>
+<ul class="show_alunos">
 	{% for aluno in alunos %}
 		<li>
 			<a href="{% url 'namespace_detalhes_aluno' aluno.id %}">{{ aluno }}</a>
@@ -15,7 +22,9 @@ Alunos Cadastradas na Aplicaçao
 </ul>
 {% endif %}
 
-<a href="{% url 'namespace_cadastrar_aluno' %}">Adicionar Aluno</a>
+
+<a href="{% url 'namespace_cadastrar_aluno' %}"><button class="btn btn-primary btn-block">Adicionar Aluno</button></a>
+
 
 </body>
 </html>

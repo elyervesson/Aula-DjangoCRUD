@@ -1,16 +1,24 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
 	<title>Cadastro</title>
+
+	{% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
+
+	<link rel="stylesheet" href="{% static 'main.css' %}" />
 </head>
-<body>
-	Cadastrar Um Novo Aluno na Aplicaçao
+<body class="jumbotron">
+	<h3>Cadastrar Um Novo Aluno na Aplicaçao</h3>
 
 	<form method="POST">
 		{% csrf_token %}
-		{{ form.as_p }}
-		<button type="submit">Adicionar Aluno</button>
+		{{ form.as_ul }}
+
+		<button class="btn btn-primary btn-block space" type="submit">Adicionar Aluno</button>
 	</form>
 
-	<a href="{% url 'namespace_lista_alunos' %}">Listar Aluno</a>
+	<a href="{% url 'namespace_lista_alunos' %}"><button class="btn btn-success btn-block space">Listar Alunos</button></a>
 </body>
 </html>
