@@ -4,7 +4,7 @@ from django.db import models
 from random import randint
 
 # Create your models here.
-class Estudante(models.Model):
+class Aluno(models.Model):
 	primeiro_nome = models.CharField(max_length=30)
 	ultimo_nome = models.CharField(max_length=30)
 	email = models.EmailField()
